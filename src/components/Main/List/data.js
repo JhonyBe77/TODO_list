@@ -1,16 +1,16 @@
 const data = [
-    /* {
-      title: "zapatos"
+    {
+      title: "Levantarse a las 8 AM"
     },
     {
-      title: "gorra"
+      title: "Desayunar cereales"
     },
     {
-      title: "bufanda"
+      title: "Hacer ejercicio a las 11 AM"
     },
     {
-      title: "guantes"
-    }, */
+      title: "Almorzar"
+    },
   ];
 
   export default data;
