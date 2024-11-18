@@ -4,7 +4,7 @@ import List from "./list";
 
 const Main = () => {
   return <main>
-    <h1>Este es el Main</h1>
+    <h1>Estas son mis tareas</h1>
      {/* <Contact/> */}
      <List/>
     </main>;

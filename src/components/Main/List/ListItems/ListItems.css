@@ -28,18 +28,71 @@ article {
     margin: 0;
   }
   
-  button {
-    padding: 5px 10px;
-    font-size: 14px;
-    color: white;
-    background-color: #ff5722;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #e64a19;
-  }
-  
+.btn-borrar {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #ff5722; 
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-borrar:hover {
+  background-color: #e64a19; 
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 5px
+}
+
+
+.btn-add {
+  background-color: #4CAF50; /* Verde */
+}
+
+.btn-add:hover {
+  background-color: #45A049; /* Verde oscuro */
+}
+
+
+.btn-borrartodo {
+  background-color: #f44336; /* Rojo */
+}
+
+.btn-borrartodo:hover {
+  background-color: #d32f2f; /* Rojo oscuro */
+}
+
+/* Botón "Recargar" */
+.btn-recargar {
+  background-color: #2196F3; /* Azul */
+}
+
+.btn-recargar:hover {
+  background-color: #1976D2; /* Azul oscuro */
+}
+
+/* Estilo para alinear los botones en fila */
+.grupo-botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 10px;
+}
