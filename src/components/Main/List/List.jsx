@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ListItems from './ListItems/';
 import data from './data.js';
+import './List.css';
 import { v4 as uuidv4 } from 'uuid';
 
 const List = () => {
@@ -13,8 +13,11 @@ const List = () => {
   const [editIndex, setEditIndex] = useState(null);
 
   useEffect(() => {
-    setItems(data);
-    setShowButtons(data.length > 0);
+    setItems([
+      { title: 'Tarea 1', isDone: false, _id: uuidv4() },
+      { title: 'Tarea 2', isDone: true, _id: uuidv4() },
+    ]);
+    setShowButtons(true);
   }, []);
 
   useEffect(() => {
@@ -46,13 +49,16 @@ const List = () => {
 
     if (isEditing) {
       const updatedItems = [...items];
-      updatedItems[editIndex] = { title: trimmedTitle };
+      updatedItems[editIndex] = {
+        ...updatedItems[editIndex],
+        title: trimmedTitle,
+      };
       setItems(updatedItems);
       setIsEditing(false);
       setEditIndex(null);
       setMessage('Tarea actualizada');
     } else {
-      addItem({ title: trimmedTitle });
+      addItem({ title: trimmedTitle, desc: 'Nueva tarea', isDone: false, _id: uuidv4() });
       setMessage('Tarea añadida');
     }
 
@@ -65,20 +71,19 @@ const List = () => {
 
   const renderItems = () => {
     return items.map((item, i) => (
-      <article key={uuidv4()}>
-        <h4>{item.title}</h4>
-        <div className="grupo-botones">
-          <button onClick={() => handleEdit(i)} className="btn-add">
-            Editar
+      <article key={item._id} className="task-item">
+        <h4 className={item.isDone ? "completed" : ""}>{item.title}</h4>
+        <div className="task-buttons">
+          <button onClick={() => toggleTaskStatus(i)} className="btn-toggle">
+            {item.isDone ? "Desmarcar" : "Tachar"}
           </button>
-          <button onClick={() => removeItem(i)} className="btn-borrar">
-            Eliminar
-          </button>
+          <button onClick={() => handleEdit(i)} className="btn-edit">Editar</button>
+          <button onClick={() => removeItem(i)} className="btn-delete">Eliminar</button>
         </div>
       </article>
     ));
   };
-
+  
   const addItem = (new_item) => {
     setItems([new_item, ...items]);
   };
@@ -97,6 +102,12 @@ const List = () => {
     const remainingItems = items.filter((_, index) => index !== i);
     setItems(remainingItems);
     setShowButtons(remainingItems.length > 0);
+  };
+
+  const toggleTaskStatus = (index) => {
+    const updatedItems = [...items];
+    updatedItems[index].isDone = !updatedItems[index].isDone;
+    setItems(updatedItems);
   };
 
   const handleEdit = (index) => {
@@ -120,22 +131,21 @@ const List = () => {
           className="form-input"
         />
         {values.title.trim() && (
-          <button type="submit" className={isEditing ? "btn-add" : "btn-add"}>
-            {isEditing ? 'Guardar Cambios' : 'Add'}
+          <button type="submit" className="btn-submit">
+            {isEditing ? 'Guardar Cambios' : 'Añadir'}
           </button>
         )}
       </form>
 
-      {/* Mostrar mensajes */}
       {error && <p className="error-message">{error}</p>}
       {message && <p className="success-message">{message}</p>}
 
       {showButtons && (
-        <div className="main-buttons">
-          <button onClick={removeAllItems} className="btn-borrartodo">
+        <div className="action-buttons">
+          <button onClick={removeAllItems} className="btn-clear">
             Borrar todo
           </button>
-          <button onClick={resetItems} className="btn-recargar">
+          <button onClick={resetItems} className="btn-reset">
             Recargar
           </button>
         </div>

@@ -1,0 +1,148 @@
+.list-container {
+    padding: 20px;
+    background-color: #b0e0e6;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background-color: #324ab2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.items-container {
+    margin-top: 20px;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.task-item {
+    padding: 10px;
+    background-color: #e0f8fb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #3249b25c;
+}
+
+.task-item h4.completed {
+    text-decoration: line-through;
+    color: #c71585;
+    opacity: 0.7;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.task-buttons button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-toggle {
+    background-color: #e0f8fb;
+    color: #3249b24a;
+    border: 1px solid #3249b219;
+}
+
+.btn-toggle:hover {
+    background-color: #b0e0e6;
+    color: #324ab2;
+    border: 1px solid #3249b25c;
+}
+
+.btn-edit {
+    background-color: #3249b268;
+    color: #ffffff8c;
+}
+.btn-edit:hover {
+    background-color: #324ab2;
+    color: #fff;
+}
+
+.btn-delete {
+    background-color: #c7158657;
+    color: #ffffff8c;
+}
+
+.btn-delete:hover {
+    background-color: #c71585;
+    color: #fff;
+}
+
+/* Nuevos estilos para los botones "Borrar todo" y "Recargar" */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-clear {
+    background-color: #c71585;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-clear:hover {
+    background-color: #9c1169;
+    transform: scale(1.05);
+}
+
+.btn-reset {
+    background-color: #324ab2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reset:hover {
+    background-color: #1f2d6a;
+    transform: scale(1.05);
+}

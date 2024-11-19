@@ -1,98 +1,23 @@
-.picture_item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-article {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #f9754c;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease;
-  }
-  
-  article:hover {
-    background-color: #fbc49a;
-  }
-  
-  h4 {
-    font-size: 18px;
-    color: #333;
-    margin: 0;
-  }
-  
-.btn-borrar {
-  padding: 5px 10px;
-  font-size: 14px;
-  color: white;
-  background-color: #ff5722; 
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-borrar:hover {
-  background-color: #e64a19; 
-}
-
-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 10px 5px
-}
-
-
-.btn-add {
-  background-color: #4CAF50; /* Verde */
-}
-
-.btn-add:hover {
-  background-color: #45A049; /* Verde oscuro */
-}
-
-
-.btn-borrartodo {
-  background-color: #f44336; /* Rojo */
-}
-
-.btn-borrartodo:hover {
-  background-color: #d32f2f; /* Rojo oscuro */
-}
-
-/* Botón "Recargar" */
-.btn-recargar {
-  background-color: #2196F3; /* Azul */
-}
-
-.btn-recargar:hover {
-  background-color: #1976D2; /* Azul oscuro */
-}
-
-/* Estilo para alinear los botones en fila */
-.grupo-botones {
+.list-item {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-.main-buttons {
-  display: flex;
-  justify-content: center; 
-  gap: 10px; 
-  margin-top: 10px;
+.item-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
